@@ -1,0 +1,14 @@
+{
+  "name": "ant-membership",
+  "version": "1.0.0",
+  "author": "Samuel Zuniga Vanoye",
+  "description": "Afiliacion y validacion de usuarios",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "mocha": "^2.0.1",
+    "should": "^4.1.0"
+  }
+}
