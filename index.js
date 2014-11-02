@@ -5,7 +5,7 @@ var Membership = function (dbName) {
 
     var db = new Database(dbName);
 
-    var sayHello = function () {
+    self.sayHello = function () {
         console.log('Hola mundo');
     };
 
