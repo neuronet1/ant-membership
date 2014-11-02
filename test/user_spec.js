@@ -14,11 +14,11 @@ describe("User", function () {
       });
 
       it('has a created date', function () {
-         user.createdAt.should.be.defined;
+         return user.createdAt.should.be.defined;
       });
 
       it('has a last login', function () {
-         user.lastLogin.should.be.defined;
+         return user.lastLogin.should.be.defined;
       });
 
    }) ;
