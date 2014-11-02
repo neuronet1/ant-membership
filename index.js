@@ -1,7 +1,10 @@
 var Database = require('./lib/db');
+var util = require('util');
+var events = require('events');
 
 var Membership = function (dbName) {
     var self = this;
+    events.EventEmitter.call(self);
 
     var db = new Database(dbName);
 
@@ -9,6 +12,8 @@ var Membership = function (dbName) {
         console.log('Hola mundo');
     };
 
+    return self;
 };
 
+util.inherits(Membership, events.EventEmitter);
 module.exports = Membership
