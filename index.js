@@ -1,4 +1,4 @@
-var Database = require('lib/db');
+var Database = require('./lib/db');
 
 var Membership = function (dbName) {
     var self = this;
