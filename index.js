@@ -9,7 +9,7 @@ var Membership = function (dbName) {
     var db = new Database(dbName);
 
     self.sayHello = function () {
-        console.log('Hola mundo');
+        console.log('Hola mundo 2');
     };
 
     return self;
