@@ -24,13 +24,23 @@ var Membership = function (dbName) {
                 // checamos si hay datos
                 db.users.count(function (err, count) {
                     if(err) {
-                        console.log('Error al obtener el numero de registros en usuarios');
+                       console.log('Error al obtener el numero de registros en usuarios');
                     }
                     else {
                         if(count === 0) {
                             SeedData.initialUsers.forEach(function (item) {
-                                console.log(item);
+                                db.users.insert(item, function (err) {
+                                    if(err) {
+                                        console.log('Error al crear el usuario');
+                                    }
+                                    else {
+                                        console.log(item);
+                                    }
+                                });
                             });
+                        }
+                        else {
+                            console.log('No inserte porque la coleccion tiene datos');
                         }
                     }
 
