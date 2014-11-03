@@ -10,8 +10,8 @@ var Membership = function (dbName) {
 
     var database = new Database(dbName);
 
-    var getUsersCount = function (d) {
-        console.log(d.tag);
+    var getUsersCount = function (database) {
+        console.log(database.tag);
     };
 
     self.sayHello = function () {
@@ -23,10 +23,7 @@ var Membership = function (dbName) {
     self.seedDatabase = function () {
 
         database.getDatabase().
-            then(getUsersCount).
-            catch(function (err) {
-            console.log(err);
-        });
+            then(getUsersCount)
 
         /*
         database.getDatabase(function (err, db) {
