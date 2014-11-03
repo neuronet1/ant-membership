@@ -1,0 +1,31 @@
+
+       database.getCollectionCount(db, 'users').
+                then(function (count) {
+                    console.log('El numero de usuarios es ' + count);
+                })
+                .catch(function (err) {console.log(err);});
+
+                                db.users.count(function (err, count) {
+                    if(err) {
+                       console.log('Error al obtener el numero de registros en usuarios');
+                    }
+                    else {
+                        if(count === 0) {
+                            SeedData.initialUsers.forEach(function (item) {
+                                db.users.insert(item, function (err) {
+                                    if(err) {
+                                        console.log('Error al crear el usuario');
+                                    }
+                                    else {
+                                        console.log(item);
+                                    }
+                                });
+                            });
+                        }
+                        else {
+                            console.log('No inserte porque la coleccion tiene datos');
+                        }
+                    }
+
+
+                });

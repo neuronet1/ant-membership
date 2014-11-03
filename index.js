@@ -10,6 +10,10 @@ var Membership = function (dbName) {
 
     var database = new Database(dbName);
 
+    var getUsersCount = function (database) {
+        console.log(database.tag);
+    };
+
     self.sayHello = function () {
         console.log('Hola mundo 2');
     };
@@ -17,14 +21,11 @@ var Membership = function (dbName) {
     // Si las colecciones no existen o estan vacias
     // las llena con los valores iniciales
     self.seedDatabase = function () {
-        database.getDatabase2().then(function (db) {
 
-            database.getUsersCount(db).then(function (count) {
-               console.log('El numero de usuarios es ' + count);
-            }).catch(function (err) {console.log(err);});
-
-        }).catch(function (err) {
-            console.log('Error al iniciar los valores iniciales de la base:' + err);
+        database.getDatabase().
+            then(getUsersCount()).
+            catch(function (err) {
+            console.log(err);
         });
 
         /*
