@@ -10,8 +10,8 @@ var Membership = function (dbName) {
 
     var database = new Database(dbName);
 
-    var getUsersCount = function (database) {
-        console.log(database.tag);
+    var getUsersCount = function (d) {
+        console.log(d.tag);
     };
 
     self.sayHello = function () {
