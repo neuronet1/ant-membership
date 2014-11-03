@@ -2,6 +2,7 @@ var Database = require('./lib/db');
 var SeedData = require('./lib/seedData');
 var util = require('util');
 var events = require('events');
+var BluePromise = require('bluebird');
 
 var Membership = function (dbName) {
     var self = this;
@@ -16,6 +17,17 @@ var Membership = function (dbName) {
     // Si las colecciones no existen o estan vacias
     // las llena con los valores iniciales
     self.seedDatabase = function () {
+        database.getDatabase2().then(function (db) {
+
+            database.getUsersCount(db).then(function (count) {
+               console.log('El numero de usuarios es ' + count);
+            }).catch(function (err) {console.log(err);});
+
+        }).catch(function (err) {
+            console.log('Error al iniciar los valores iniciales de la base:' + err);
+        });
+
+        /*
         database.getDatabase(function (err, db) {
             if(err) {
                 console.log('Error al iniciar los valores iniciales de la base:' + err);
@@ -48,6 +60,8 @@ var Membership = function (dbName) {
             }
 
         });
+        */
+
     };
 
 

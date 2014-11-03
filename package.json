@@ -4,6 +4,7 @@
   "author": "Samuel Zuniga Vanoye",
   "description": "Afiliacion y validacion de usuarios",
   "dependencies": {
+    "bluebird": "^2.3.10",
     "mongodb": "^1.4.19"
   },
   "devDependencies": {
