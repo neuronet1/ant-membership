@@ -23,7 +23,7 @@ var Membership = function (dbName) {
     self.seedDatabase = function () {
 
         database.getDatabase().
-            then(getUsersCount()).
+            then(getUsersCount(d)).
             catch(function (err) {
             console.log(err);
         });
